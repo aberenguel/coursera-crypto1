@@ -1,6 +1,16 @@
+# Java
 *.class
+bin
+target
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+# Backup
+*.bkp
+*~
+
+# Log
+*.log
