@@ -2,10 +2,21 @@ package org.berenguel.util;
 
 public class CipherUtils {
 
-	public static void store(byte[] dst, byte[] src, int beginDstIndex) {
-		for (int i = 0; i < src.length && beginDstIndex + i < dst.length; i++) {
-			dst[beginDstIndex + i] = src[i];
+	public static void store(byte[] dst, byte[] src, int beginDstIndex,
+			int beginSrcIndex, int maxBytes) {
+
+		for (//
+		int i = 0, iDst = beginDstIndex, iSrc = beginSrcIndex; //
+		(maxBytes < 0 || i < maxBytes) && iDst < dst.length && iSrc < src.length; //
+		i++, iDst++, iSrc++) {
+
+			dst[iDst] = src[iSrc];
 		}
+	}
+
+	public static void store(byte[] dst, byte[] src, int beginDstIndex,
+			int beginSrcIndex) {
+		store(dst, src, beginDstIndex, beginSrcIndex, -1);
 	}
 
 	public static byte[] xor(byte[] a, byte[] b) {

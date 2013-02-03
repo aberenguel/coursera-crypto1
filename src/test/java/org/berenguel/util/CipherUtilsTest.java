@@ -20,7 +20,7 @@ public class CipherUtilsTest {
 		byte[] src = new byte[] { 7, 8, 9 };
 		byte[] expect = new byte[] { 0, 1, 7, 8, 9, 5 };
 		
-		CipherUtils.store(dst, src, 2);
+		CipherUtils.store(dst, src, 2, 0);
 		
 		assertArrayEquals(expect, dst);
 	}

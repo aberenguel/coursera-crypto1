@@ -98,7 +98,7 @@ public class KeyCipherContainer {
 
 			// get and store the plain block
 			byte[] plainBlock = xor(decipherBlock, previousCipherBlock);
-			store(plainWithPad, plainBlock, i * 16);
+			store(plainWithPad, plainBlock, i * 16, 0);
 
 			cipherBlock = previousCipherBlock;
 		}
@@ -119,7 +119,7 @@ public class KeyCipherContainer {
 		for (int i = 0; i < blocksCount; i++) {
 
 			byte[] streamKeyBlock = encriptAes.doFinal(ivBytes);
-			store(streamKey, streamKeyBlock, i * 16);
+			store(streamKey, streamKeyBlock, i * 16, 0);
 
 			// increment the IV
 			increment(ivBytes);

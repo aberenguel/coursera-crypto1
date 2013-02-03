@@ -14,3 +14,5 @@ target
 
 # Log
 *.log
+
+src/test/resources/*.mp4
